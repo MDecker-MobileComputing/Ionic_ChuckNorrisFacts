@@ -9,10 +9,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
 
-  readonly URL_ICNDB = "https://api.icndb.com/jokes/random";
+  /** URL for REST endpoint of ICNDB's Web API. */
+  readonly URL_ICNDB = "https://api.icndb.de/jokes/random";
+
+  readonly OPTIONS_OBJECT: object = { observe: "response" };
+
 
   /** Member-Variable mit "Chuck Norris Fact", der mit Interpolation dargestellt wird. */
   private witz = "";
+
 
   /**
    * Constructor für Dependency Injection.
@@ -25,7 +30,22 @@ export class HomePage {
    */
   public onJokeLadenButton() {
 
-    this.witz = "Beispiel-Witz";
+    this.httpClient.get(this.URL_ICNDB, this.OPTIONS_OBJECT).subscribe((httpResponse:any) => {
+
+      console.log(`httpResponse: ${httpResponse.status}`);
+      
+      if (httpResponse.status === 200) {
+
+        this.witz = httpResponse.body.value.joke;
+        console.log(`httpResponse.body=${httpResponse.body.value.joke}`);
+
+      } else {
+        
+        this.witz = `Fehler bei Zugriff auf Web-API: ${httpResponse.statusText} (${httpResponse.status})`;
+      }      
+
+    });
+
   }
 
 }
