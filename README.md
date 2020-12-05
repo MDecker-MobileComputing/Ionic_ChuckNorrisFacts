@@ -3,6 +3,16 @@
 Simple Ionic app to fetch so called *Chuck Norris facts* (short jokes) from
 ICNDB.com's web API.
 
+<br>
+
+----
+
+## Screenshots ##
+
+![Screenshot 1](screenshot_1.png)
+
+<br>
+
 ----
 
 ## References ##
@@ -14,6 +24,8 @@ ICNDB.com's web API.
 * [Video "Chuck Norris facts read by Chuck Norris" on youtube.com](https://www.youtube.com/watch?v=kQmPMZeN7JQ)
 
 * Similar API: https://api.chucknorris.io/
+
+<br>
 
 ----
 
