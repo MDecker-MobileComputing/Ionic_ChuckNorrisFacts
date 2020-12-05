@@ -12,8 +12,11 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class HomePage {
 
-  /** URL for REST endpoint of ICNDB's Web API. */
-  readonly URL_ICNDB = "https://api.icndb.com/jokes/random";  
+  /** 
+   * URL for REST endpoint of ICNDB's Web API. Über URL-Parameter `exclude` werden 
+   * anstößige ("explizite") Witze ausgeschlossen.
+   */
+  readonly URL_ICNDB = "https://api.icndb.com/jokes/random?exclude=[explicit]";  
 
   /** Konfigurations-Objekt für HttpClient. */
   readonly OPTIONS_OBJECT: object = { observe: "response" };
