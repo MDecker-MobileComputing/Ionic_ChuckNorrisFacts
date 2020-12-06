@@ -10,22 +10,31 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <div *ngFor="let objekt of gespeicherteWitzePromise | async">
 
-    &nbsp;
+  <div *ngIf="(gespeicherteWitzePromise| async)?.length > 0; else nixGespeichert">
 
-    <ion-text color="primary">
-      <h2>{{ objekt.text }}</h2>
-    </ion-text>
+    <div *ngFor="let objekt of gespeicherteWitzePromise | async">
+    
+      &nbsp;
 
-    <ion-text color="secondary">
-      Gespeichert am {{ objekt.zeitstempel | date:'longDate' }}
-    </ion-text>
+      <ion-text color="primary">
+        <h2>{{ objekt.text }}</h2>
+      </ion-text>
 
-    <!-- Deutsche Lokalisierung für Pipe "date" siehe auch Datei app.module.ts. -->
+      <ion-text color="secondary">
+        Gespeichert am {{ objekt.zeitstempel | date:'longDate' }}
+        <!-- Deutsche Lokalisierung für Pipe "date" siehe auch Datei app.module.ts. -->
+      </ion-text>      
 
-    &nbsp;
+      &nbsp;
 
+    </div>
   </div>
+ 
+ <ng-template #nixGespeichert>
+   <ion-text color="secondary">
+     <h2>Keine <i>Chuck Norris Facts</i> gespeichert.</h2>
+   </ion-text>
+ </ng-template> 
 
 </ion-content>
