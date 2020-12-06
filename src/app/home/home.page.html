@@ -7,9 +7,15 @@
 <ion-content [fullscreen]="true">
 
   <ion-text color="primary">
-      <h1>{{witz}}</h1>
+      <h1>{{witzText}}</h1>
   </ion-text>
 
-  <ion-button expand="block" (click)="onJokeLadenButton()" >Witz laden</ion-button>
+  <ion-button color="primary" expand="block" (click)="onJokeLadenButton()" >Witz laden</ion-button>
+
+  &nbsp;
+
+  <div *ngIf="zeigeSpeichernButton">
+    <ion-button color="secondary" expand="block" (click)="onSpeichernButton()" >Speichern</ion-button>
+  </div>
 
 </ion-content>
