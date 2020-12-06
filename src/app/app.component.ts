@@ -45,6 +45,10 @@ export class AppComponent {
       {
         titel: "Gespeicherte Facts",
         ziel: "/seite2"
+      },
+      { 
+        titel: "Einstellungen",
+        ziel: "/seite3"
       }
     ];
   }

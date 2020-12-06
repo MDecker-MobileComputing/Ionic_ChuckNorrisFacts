@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { SpeicherService} from '../speicher.service';
+import { DialogToastHelferService} from '../dialog-toast-helfer.service';
 
 /**
  * Seite zur Anzeige aller gespeicherten *Chuck Norris Facts*.
@@ -13,6 +14,7 @@ export class Seite2Page {
 
   /** Promise auf Array mit allen Witz-Objekten, wird mit `*ngFor` auf Seite dargestellt. */
   private gespeicherteWitzePromise: Promise<object[]> = null;
+
 
   /**
    * Konstruktor für *Dependency Injection*.
