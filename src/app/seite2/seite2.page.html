@@ -12,9 +12,17 @@
 
   <div *ngFor="let objekt of gespeicherteWitzePromise | async">
 
+    &nbsp;
+
     <ion-text color="primary">
-      <h2>{{objekt.text}}</h2>
+      <h2>{{ objekt.text }}</h2>
     </ion-text>
+
+    <ion-text color="secondary">
+      Gespeichert am {{ objekt.zeitstempel | date:'longDate' }}
+    </ion-text>
+
+    <!-- Deutsche Lokalisierung für Pipe "date" siehe auch Datei app.module.ts. -->
 
     &nbsp;
 

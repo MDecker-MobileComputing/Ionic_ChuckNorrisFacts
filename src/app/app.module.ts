@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -10,6 +10,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+
+import localeDe from '@angular/common/locales/de';
+import { registerLocaleData } from '@angular/common';
+
+/**
+ * Deutsche Lokalisierung für Datumsformatierung, siehe
+ * https://devdactic.com/ionic-5-calendar-modal/
+ *
+ * Siehe auch Provider-Eintrag unten.
+ */
+registerLocaleData(localeDe);
 
 
 /**
@@ -30,7 +41,8 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LOCALE_ID, useValue: "de-DE" }
   ],
   bootstrap: [AppComponent]
 })
