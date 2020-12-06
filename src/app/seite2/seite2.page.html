@@ -10,7 +10,6 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
-
   <div *ngIf="(gespeicherteWitzePromise| async)?.length > 0; else nixGespeichert">
 
     <div *ngFor="let objekt of gespeicherteWitzePromise | async">
@@ -31,10 +30,12 @@
     </div>
   </div>
  
- <ng-template #nixGespeichert>
-   <ion-text color="secondary">
-     <h2>Keine <i>Chuck Norris Facts</i> gespeichert.</h2>
-   </ion-text>
- </ng-template> 
+  <ng-template #nixGespeichert>
+    <ion-text color="secondary">
+      <h2>Keine <i>Chuck Norris Facts</i> gespeichert.</h2>
+    </ion-text>
+  </ng-template> 
 
 </ion-content>
+
+
