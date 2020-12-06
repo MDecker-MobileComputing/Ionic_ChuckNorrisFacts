@@ -1,3 +1,17 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menü</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <ion-list *ngFor="let eintrag of menueEintraegeArray">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item [routerLink]="eintrag.ziel" routerDirection="forward">{{eintrag.titel}}</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet><!-- Attribut "main" ist wichtig, siehe https://www.damirscorner.com/blog/posts/20190906-MakingAMenuWorkInIonic4.html -->
 </ion-app>

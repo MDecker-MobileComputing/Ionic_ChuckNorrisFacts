@@ -73,14 +73,13 @@ export class HomePage {
    */
   private verarbeiteHttpResponse = (httpResponse:any) => {
 
-    if (httpResponse.status === 200) {
+    if (httpResponse.status === 200) { // HTTP Status Code 200 = Ok
 
       let joke = httpResponse.body.value.joke;
 
       this.witzNummer = httpResponse.body.value.id;
 
       this.witzText = joke.replace(/&quot\;/g, '"'); // &quot; mit Anführungszeichen ersetzen
-
 
       this.zeigeSpeichernButton = true;
 

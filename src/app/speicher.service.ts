@@ -5,8 +5,6 @@ import { Storage } from '@ionic/storage';
 /**
  * Service-Klasse kapselt Persistenz mit
  * [ionic-storage]( https://ionicframework.com/docs/angular/storage#ionic-storage ).
- *
- *
  */
 @Injectable({
   providedIn: 'root'
@@ -51,6 +49,35 @@ export class SpeicherService {
 
       return false;
     }
+  }
+
+
+  /**
+   * Methode um alle gespeicherten Witze zurückzugeben.
+   *
+   * @return  Promise auf Array von Objekten; jedes der Objekte in diesem
+   *          Array enthält unter dem Schlüssel `text` den eigentlichen
+   *          *Chuck Norris Fact*  und unter dem Schlüssel `zeitstempel`
+   *          die Anzahl Millisekunden seit dem 1. Januar 1970, 0:00 Uhr
+   *          (UTC).
+   */
+  public async holeAlleWitz(): Promise<object[]> {
+
+    const ergebnisPromise = new Promise<object[]>( (resolveCallback, rejectCallback) => {
+
+      const ergebnisArray: object[] = [];
+
+      this.storage.forEach( (wert, schluessel, nummer) => {
+
+        ergebnisArray.push(wert);
+
+      }).then( () => {
+
+        resolveCallback(ergebnisArray);
+      });
+    });
+
+    return ergebnisPromise;
   }
 
 }

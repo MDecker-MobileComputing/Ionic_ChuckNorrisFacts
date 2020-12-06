@@ -10,11 +10,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
+  /** Array enthält für jeden Menü-Eintrag ein Objekt mit den keys `titel` und `ziel`. */
+  private menueEintraegeArray: Array<Object>;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+
+    this.fuelleMenueEintrageArray();
     this.initializeApp();
   }
 
@@ -24,4 +30,23 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  /**
+   * Füllt Member-Variable `menueEintraegeArray` mit einem
+   * Element pro Navigationsziel/Seite.
+   */
+  private fuelleMenueEintrageArray() {
+
+    this.menueEintraegeArray = [
+      {
+        titel: "Chuck Norris Facts abrufen",
+        ziel: "/home"
+      },
+      {
+        titel: "Gespeicherte Facts",
+        ziel: "/seite2"
+      }
+    ];
+  }
+
 }

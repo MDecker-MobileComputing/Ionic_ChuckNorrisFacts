@@ -1,0 +1,23 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gespeicherte <i>Chuck Norris Facts</i></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div *ngFor="let objekt of gespeicherteWitzePromise | async">
+
+    <ion-text color="primary">
+      <h2>{{objekt.text}}</h2>
+    </ion-text>
+
+    &nbsp;
+
+  </div>
+
+</ion-content>
