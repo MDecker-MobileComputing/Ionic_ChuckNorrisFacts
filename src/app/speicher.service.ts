@@ -41,7 +41,7 @@ export class SpeicherService {
         zeitstempel: Date.now()
       };
 
-      await this.storage.set(witzNummerAlsString, witzObjekt);
+      await this.storage.set( witzNummerAlsString, witzObjekt );
 
       return true;
 
