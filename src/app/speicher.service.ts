@@ -76,7 +76,7 @@ export class SpeicherService {
   /**
    * Methode löscht *ALLE* gespeicherten Witze.
    */
-  public async alleLoeschen() {
+  public async alleLoeschen(): Promise<void> {
 
     await this.storage.clear();
   }
