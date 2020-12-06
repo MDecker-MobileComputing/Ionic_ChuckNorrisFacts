@@ -33,7 +33,7 @@ export class Seite2Page {
 
   private holeDatenVonSpeicherService(): void {
 
-    this.gespeicherteWitzePromise = this.speicherService.holeAlleWitz();
+    this.gespeicherteWitzePromise = this.speicherService.holeAlleWitze();
   }
 
 }

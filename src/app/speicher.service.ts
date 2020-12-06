@@ -1,19 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
-
-/**
- * Service-Klasse kapselt Persistenz mit
- * [ionic-storage]( https://ionicframework.com/docs/angular/storage#ionic-storage ).
- */
 @Injectable({
   providedIn: 'root'
 })
 export class SpeicherService {
 
-  /**
-   * Konstruktor für *Dependency Injection*.
-   */
   constructor(private storage: Storage){}
 
 
@@ -61,7 +53,7 @@ export class SpeicherService {
    *          die Anzahl Millisekunden seit dem 1. Januar 1970, 0:00 Uhr
    *          (UTC).
    */
-  public async holeAlleWitz(): Promise<object[]> {
+  public async holeAlleWitze(): Promise<object[]> {
 
     const ergebnisPromise = new Promise<object[]>( (resolveCallback, rejectCallback) => {
 
