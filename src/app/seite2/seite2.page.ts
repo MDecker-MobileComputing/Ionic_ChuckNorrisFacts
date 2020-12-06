@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 import { SpeicherService} from '../speicher.service';
-import { DialogToastHelferService} from '../dialog-toast-helfer.service';
 
 /**
  * Seite zur Anzeige aller gespeicherten *Chuck Norris Facts*.
