@@ -27,12 +27,6 @@ export class Seite2Page {
    */
   private ionViewWillEnter() {
 
-    this.holeDatenVonSpeicherService();
-  }
-
-
-  private holeDatenVonSpeicherService(): void {
-
     this.gespeicherteWitzePromise = this.speicherService.holeAlleWitze();
   }
 
