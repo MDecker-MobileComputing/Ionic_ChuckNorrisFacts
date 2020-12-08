@@ -6,7 +6,10 @@ import { Storage } from '@ionic/storage';
 })
 export class SpeicherService {
 
-  constructor(private storage: Storage){}
+  /**
+   * Constructor für *Dependency Injection*.
+   */
+  constructor(private storage: Storage) {}
 
 
   /**
